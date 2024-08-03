@@ -17,6 +17,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         };
       }
     },
+    signingCosmwasm(chain) {
+      if ((chain as Chain)?.chain_name === "neutrontestnet") {
+        return {
+          gasPrice: GasPrice.fromString("0.025untrn"),
+        };
+      }
+    },
   };
   return (
     <ChainProvider
